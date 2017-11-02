@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "Sergio Henrique Pereira Reis <sergio.hpreis@gmail.com>",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.2",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.5"
   }
