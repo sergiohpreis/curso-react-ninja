@@ -33,5 +33,8 @@
     "globals": [
       "alert"
     ]
+  },
+  "dependencies": {
+    "@fdaciuk/ajax": "^2.3.0"
   }
 }
