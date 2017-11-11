@@ -39,12 +39,32 @@ class App extends Component {
     }
   }
 
+  handleRepos (e) {
+    ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/repos`)
+      .then(result => {
+        this.setState({
+          repos: result
+        })
+      })
+  }
+
+  handleStarred (e) {
+    ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/starred`)
+      .then(result => {
+        this.setState({
+          starred: result
+        })
+      })
+  }
+
   render () {
     return <AppContent
       userinfo={this.state.userinfo}
       repos={this.state.repos}
       starred={this.state.starred}
       handleSearch={e => this.handleSearch(e)}
+      handleRepos={e => this.handleRepos(e)}
+      handleStarred={e => this.handleStarred(e)}
     />
   }
 }
