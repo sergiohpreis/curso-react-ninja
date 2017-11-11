@@ -4,16 +4,16 @@
 
 import React, { PropTypes } from 'react'
 
-const Actions = ({ handleRepos, handleStarred }) => (
+const Actions = ({ getRepos, getStarred }) => (
   <div className='actions'>
-    <button onClick={handleRepos}>Ver repositórios</button>
-    <button onClick={handleStarred}>Ver favoritos</button>
+    <button onClick={getRepos}>Ver repositórios</button>
+    <button onClick={getStarred}>Ver favoritos</button>
   </div>
 )
 
 Actions.propTypes = {
-  handleRepos: PropTypes.func.isRequired,
-  handleStarred: PropTypes.func.isRequired
+  getRepos: PropTypes.func.isRequired,
+  getStarred: PropTypes.func.isRequired
 }
 
 export default Actions
