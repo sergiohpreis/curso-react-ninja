@@ -3,21 +3,38 @@
 import { expect } from 'chai'
 import map from './map'
 
-it('map() should be a function', () => {
+it('map should be a function', () => {
     expect(map).to.be.a('function')
+});
+
+it('map([1, 2], item => item) should return [1, 2]', () => {
+    expect(map([1, 2], item => item)).to.be.deep.equal([1, 2])
 })
 
-it('map([1,2,3], item => item + 1) should return [2,3,4]', () => {
-    const increment = item => item + 1
-    expect(map([1,2,3], increment)).to.be.eql([2,3,4])
+it('map([3, 4], item => item) should return [3, 4]', () => {
+    expect(map([3, 4], item => item)).to.be.deep.equal([3, 4])
 })
 
-it('map([1,2,3], (item, index) => ({item, index})) should return [{item: 1, index: 0}, {item: 2, index: 1}, {item: 3, index: 2}]', () => {
-    const transform = (item, index) => ({ item, index })
-    expect(map([1, 2, 3], transform)).to.be.eql([{ item: 1, index: 0 }, { item: 2, index: 1 }, { item: 3, index: 2 }])
+it('map([1, 2], item => item + 1) should return [2, 3]', () => {
+    expect(map([1, 2], item => item + 1)).to.be.deep.equal([2, 3])
 })
 
-it('map([1,2,3], (item, index, array) => ({item, index, array})) should return [{item: 1, index: 0, array: [1,2,3]}, {item: 2, index: 1, array: [1,2,3]}, {item: 3, index: 2, array: [1,2,3]}]', () => {
-    const transform = (item, index, array) => ({ item, index, array })
-    expect(map([1, 2, 3], transform)).to.be.eql([{ item: 1, index: 0, array: [1, 2, 3] }, { item: 2, index: 1, array: [1, 2, 3] }, { item: 3, index: 2, array: [1, 2, 3] }])
+it('map([4, 6], item => item + 1) should return [5, 7]', () => {
+    expect(map([4, 6], item => item + 1)).to.be.deep.equal([5, 7])
 })
+
+it('map([1, 2], (item, index) => index) should return [0, 1]', () => {
+    expect(map([1, 2], (item, index) => index)).to.be.deep.equal([0, 1])
+})
+
+it('map([1, 2], (item, index, array) => array) should return [[1, 2], [1, 2]]', () => {
+    expect(map([1, 2], (item, index, array) => array)).to.be.deep.equal([[1, 2], [1, 2]])
+})
+
+it('map() should return []', () => {
+    expect(map()).to.be.deep.equal([])
+}); 
+
+it('map([1, 2]) should return [1, 2]', () => {
+    expect(map([1, 2])).to.be.deep.equal([1, 2])
+});
