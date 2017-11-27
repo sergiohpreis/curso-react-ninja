@@ -14,8 +14,8 @@ LF:4
 LH:4
 BRDA:7,0,0,5
 BRDA:7,0,1,19
-BRDA:8,1,0,13
-BRDA:8,1,1,6
+BRDA:9,1,0,13
+BRDA:9,1,1,6
 BRF:4
 BRH:4
 end_of_record
