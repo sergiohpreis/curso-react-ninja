@@ -10,7 +10,7 @@ const reduce = (arr, func, initialValue) => {
     }
 
     for (let i = 0; i < arrCopy.length; i++) {
-        acc = func(acc, arrCopy[i], i)
+        acc = func(acc, arrCopy[i], i, arrCopy)
     }
 
     return acc
