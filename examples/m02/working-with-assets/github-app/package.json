@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack-dashboard -- node server.js",
     "build": "webpack --progress --config webpack.prod.config.js -p"
   },
   "author": "Sergio Henrique Pereira Reis <sergio.hpreis@gmail.com>",
@@ -31,6 +31,7 @@
     "standard-loader": "^6.0.1",
     "style-loader": "^0.19.0",
     "webpack": "^1.15.0",
+    "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^1.16.5",
     "webpack-validator": "^3.0.0"
   },
