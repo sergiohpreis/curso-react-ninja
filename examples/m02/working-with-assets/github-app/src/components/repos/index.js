@@ -4,6 +4,8 @@
 
 import React, { PropTypes } from 'react'
 
+import './repos.css'
+
 const Repos = ({ className, title, repos }) => (
   <div className={className}>
     <h2>{title}</h2>
