@@ -5,6 +5,8 @@
 import React, { PropTypes } from 'react'
 import ajax from '@fdaciuk/ajax'
 
+import './search.css'
+
 const Search = ({ isDisabled, handleSearch }) => (
   <div className='search'>
     <input
