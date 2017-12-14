@@ -9,6 +9,8 @@ import UserInfo from './user-info'
 import Actions from './actions'
 import Repos from './repos'
 
+import './app.css'
+
 const AppContent = ({
   userinfo,
   repos,
