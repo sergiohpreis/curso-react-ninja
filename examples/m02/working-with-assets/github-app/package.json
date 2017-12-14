@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config.js -p"
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config.js -p",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Sergio Henrique Pereira Reis <sergio.hpreis@gmail.com>",
   "license": "MIT",
@@ -34,7 +36,8 @@
     "webpack": "^1.15.0",
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^1.16.5",
-    "webpack-validator": "^3.0.0"
+    "webpack-validator": "^3.0.0",
+    "@kadira/storybook": "^2.21.0"
   },
   "standard": {
     "globals": [
