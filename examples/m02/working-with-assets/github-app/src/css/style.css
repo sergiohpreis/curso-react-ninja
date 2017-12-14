@@ -22,15 +22,21 @@ ul {
   margin: 0;
 }
 
-.starred {
+.actions,
+.repos-container {
+  display: flex;
+  justify-content: space-between;
   float: left;
   width: 100%;
 }
 
-.starred li {
-  padding: 10px 0;
+.actions button,
+.repos-container > div {
+  margin-right: 20px;
+  width: 100%
 }
 
-.starred li + li {
-  border-top: 1px solid #ccc;
+.actions :first-child,
+.repos-container :first-child {
+  margin-left: 0;
 }

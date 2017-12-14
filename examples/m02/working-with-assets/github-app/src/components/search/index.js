@@ -8,7 +8,7 @@ import ajax from '@fdaciuk/ajax'
 import style from './search.css'
 
 const Search = ({ isDisabled, handleSearch }) => (
-  <div className='search'>
+  <div className={style.search}>
     <input
       type='search'
       placeholder='Digite o nome do usuário no Github'
