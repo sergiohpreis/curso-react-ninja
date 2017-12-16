@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config.js -p",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -c storybook",
+    "build-storybook": "build-storybook -c storybook"
   },
   "author": "Sergio Henrique Pereira Reis <sergio.hpreis@gmail.com>",
   "license": "MIT",
