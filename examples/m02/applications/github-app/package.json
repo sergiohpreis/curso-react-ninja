@@ -50,9 +50,7 @@
     "webpack-validator": "^3.0.0"
   },
   "standard": {
-    "globals": [
-      "alert"
-    ]
+    "globals": ["test", "it", "describe"]
   },
   "dependencies": {
     "@fdaciuk/ajax": "^2.3.0"
