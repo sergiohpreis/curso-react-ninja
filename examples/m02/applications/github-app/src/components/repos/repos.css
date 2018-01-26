@@ -1,10 +1,5 @@
 @charset 'utf-8';
 
-.repos-list {
-  float: left;
-  width: 100%;
-}
-
 .repos-list li {
   padding: 10px 0;
 }
