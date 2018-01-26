@@ -1,22 +1,19 @@
 'use strict'
 
 const path = require('path')
-const webpack = require('webpack')
-
-const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index'),
+  entry: path.join(__dirname, '..', 'src', 'index'),
 
   output: {
     path: path.join(__dirname, '..', 'dist'),
     filename: '[name]-[hash].js'
   },
 
-  htmlPluginConfig: {
+  htmlPluginConfig: template => ({
     title: 'Github app',
-    template: path.join(__dirname, '..', 'src', 'html', 'template-dev.html')
-  },
+    template: path.join(__dirname, '..', 'src', 'html', template)
+  }),
 
   standardPreLoader: {
     test: /\.js$/,
