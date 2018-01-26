@@ -23,7 +23,7 @@ module.exports = validate({
       }
     }),
 
-    new HtmlPlugin(common.htmlPluginConfig('template.html')),
+    new HtmlPlugin(common.htmlPluginConfig('template-dev.html')),
 
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
@@ -40,7 +40,7 @@ module.exports = validate({
       common.jsLoader,
       Object.assign({}, common.cssLoader, {
         loaders: undefined,
-        loader: ExtractTextPlugin.extract(common.cssLoader.loaders[0], common.cssLoader.loaders[1])
+        loader: ExtractTextPlugin.extract.apply(null, common.cssLoader.loaders)
       })
     ]
   },
