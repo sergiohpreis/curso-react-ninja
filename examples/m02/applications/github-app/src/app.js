@@ -9,7 +9,10 @@ import AppContent from './components/app-content'
 
 const initialReposState = {
   repos: [],
-  pagination: {}
+  pagination: {
+    total: 1,
+    activePage: 1
+  }
 }
 
 class App extends Component {
@@ -66,7 +69,9 @@ class App extends Component {
     return (e) => {
       const { login } = this.state.userinfo
       ajax().get(this.getGitHubApiUrl(login, type, page))
-        .then(result => {
+        .then((result, xhr) => {
+          console.log(xhr.getResponseHeader('link'))
+
           this.setState({
             [type]: {
               repos: result.map(repo => ({
