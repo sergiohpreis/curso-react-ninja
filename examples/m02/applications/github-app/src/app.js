@@ -70,7 +70,8 @@ class App extends Component {
       const { login } = this.state.userinfo
       ajax().get(this.getGitHubApiUrl(login, type, page))
         .then((result, xhr) => {
-          console.log(xhr.getResponseHeader('link'))
+          const linkHeader = xhr.getResponseHeader('link') || ''
+          const totalPagesMatch = linkHeader.match(/&page=(\d+)>; rel="last"/)
 
           this.setState({
             [type]: {
@@ -79,7 +80,7 @@ class App extends Component {
                 link: repo.html_url
               })),
               pagination: {
-                ...this.state[type].pagination,
+                total: totalPagesMatch ? +totalPagesMatch[1] : this.state[type].pagination.total,
                 activePage: page
               }
             }
