@@ -2,7 +2,7 @@
 
 import React, { PropTypes } from 'react'
 
-const MarkdownEditor = ({ value, handleChange, getMarkup}) => (
+const MarkdownEditor = ({ value, handleChange, getMarkup }) => (
   <div className='editor'>
     <textarea value={value} onChange={handleChange} autoFocus />
 

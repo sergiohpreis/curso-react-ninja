@@ -3,8 +3,8 @@
 import React, { Component } from 'react'
 import MarkdownEditor from './markdown-editor'
 
-import './css/style.css'
 import 'normalize.css'
+import './css/style.css'
 
 class App extends Component {
   constructor () {
