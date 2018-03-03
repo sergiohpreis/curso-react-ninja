@@ -46,7 +46,11 @@ module.exports = {
       )
     }),
 
-    new HtmlPlugin(common.htmlPluginConfig),
+    new HtmlPlugin(Object.assign({}, common.htmlPluginConfig, {
+      chunkSortMode: (chunk1, chunk2) -> {
+
+      }
+    })),
 
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
