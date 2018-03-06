@@ -14,8 +14,6 @@ module.exports = {
   output: common.output,
 
   plugins: [
-    new BundleAnalyzerPlugin(),
-
     new CleanPlugin(['dist'], {
       root: common.paths.root
     }),
@@ -47,15 +45,22 @@ module.exports = {
     }),
 
     new HtmlPlugin(Object.assign({}, common.htmlPluginConfig, {
-      chunkSortMode: (chunk1, chunk2) -> {
+      minify: { collapseWhitespace: true },
 
+      chunksSortMode: (chunk1, chunk2) => {
+        const order = ['react-build', 'vendor', 'main'];
+        const left = order.indexOf(chunk1.names[0]);
+        const right = order.indexOf(chunk2.names[0]);
+        return left - right;
       }
     })),
 
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     })
-  ],
+  ].concat(
+    process.env.ANALYZER ? new BundleAnalyzerPlugin() : []
+  ),
 
   module: {
     rules: [
